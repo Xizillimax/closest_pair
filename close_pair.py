@@ -1,10 +1,13 @@
-def closest_pair_of_points(points: list[tuple[float, float]]) -> tuple[float, tuple[float, float], tuple[float, float]] | None:
+from typing import Optional
+
+
+def closest_pair_of_points(points: list[tuple[float, float]]) -> Optional[tuple[float, tuple[float, float], tuple[float, float]]]:
     """Находит ближайшую пару точек в массиве"""
     if len(points) < 2:
         return None
 
     min_distance: float = float('inf')
-    closest_pair: tuple[float, tuple[float, float], tuple[float, float]] | None = None
+    closest_pair: Optional[tuple[float, tuple[float, float], tuple[float, float]]] = None
 
     for i in range(len(points)):
         for j in range(i + 1, len(points)):
@@ -20,4 +23,4 @@ def closest_pair_of_points(points: list[tuple[float, float]]) -> tuple[float, tu
 
 assert closest_pair_of_points([(1, 1), (2, 2), (1, 2)]) == (1, (1, 1), (1, 2))
 
-print(closest_pair_of_points([(1, 1), (2, 2), (1, 2)]))
+print(closest_pair_of_points([(1, 1), (9, 9), (9, 12)]))

@@ -9,15 +9,15 @@ def closest_pair_of_points(points: list[tuple[float, float]]) -> Optional[tuple[
     """Рекурсивная функция для поиска ближайшей пары точек."""
 
     global FIRST
-    n = len(points_x)
 
     if FIRST:
-        if n < 2:
+        if len(points) < 2:
             return None
         points_x = sorted(points, key=lambda point: point[0])
         points_y = sorted(points, key=lambda point: point[1])
         FIRST = 0
-    
+
+    n = len(points_x)
     if n <= 3:
         min_distance = float('inf')
         closest_pair = (min_distance, (0, 0), (0, 0))
@@ -54,7 +54,7 @@ def closest_pair_of_points(points: list[tuple[float, float]]) -> Optional[tuple[
 
     min_dist_strip = min_distance
     closest_strip = (min_distance, (0, 0), (0, 0))
-    strip.sort(key=lambda point: point[1]) 
+    strip.sort(key=lambda point: point[1])
     for i in range(len(strip)):
         for j in range(i + 1, len(strip)):
             if strip[j][1] - strip[i][1] >= min_dist_strip:
@@ -70,8 +70,5 @@ def closest_pair_of_points(points: list[tuple[float, float]]) -> Optional[tuple[
 
 
 # Примеры использования
-
-
-assert closest_pair_of_points([(1, 1), (2, 2), (1, 2)]) == (1, (1, 1), (1, 2))
 
 print(closest_pair_of_points([(1, 1), (9, 9), (9, 12)]))

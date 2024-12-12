@@ -64,7 +64,7 @@ def closest_pair_of_points(points: list[tuple[float, float]]) -> Optional[tuple[
     points_y = sorted(points, key=lambda point: point[1])
     return closest_pair_recursive(points_x, points_y)
 
-# Примеры использования 
+# Примеры использования
 
 
 assert closest_pair_of_points([(1, 3), (2, 2), (1, 2)]) == (1, (1, 3), (1, 2))

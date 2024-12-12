@@ -67,6 +67,6 @@ def closest_pair_of_points(points: list[tuple[float, float]]) -> Optional[tuple[
 # Примеры использования
 
 
-assert closest_pair_of_points([(1, 1), (2, 2), (1, 2)]) == (1, (1, 1), (1, 2))
+assert closest_pair_of_points([(1, 3), (2, 2), (1, 2)]) == (1, (1, 3), (1, 2))
 
 print(closest_pair_of_points([(1, 1), (9, 9), (9, 12), (5, 2), (2, 4)]))
